@@ -1,0 +1,23 @@
+{% extends "entries/base.html" %}
+
+{% block content %}
+    <!-- Add the "Add new entry" button outside the loop -->
+    <a href="{% url 'entry-create' %}">
+        <button>Add new entry</button>
+    </a>
+
+    <!-- Loop through the existing entries -->
+    {% for entry in entry_list %}
+        <article>
+            <h2 class="{{ entry.date_created|date:'l' }}">
+                {{ entry.date_created|date:'Y-m-d H:i' }}
+            </h2>
+            <h3>
+                <a href="{% url 'entry-detail' entry.id %}">
+                    {{ entry.title }}
+                </a>
+            </h3>
+
+        </article>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,256 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f1ed; /* Soft off-white/cream background */
+    color: #4e3629; /* Dark brown text */
+    line-height: 1.6;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Header */
+header {
+    background-color: #4e3629; /* Dark brown header */
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 a {
+    color: #f5f1ed; /* Light cream color for title */
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+/* Message Styles */
+.messages {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    background-color: #d6c6b1; /* Light brown for messages */
+    border-left: 5px solid #a67c52; /* Subtle dark brown border */
+    font-size: 1.2em;
+}
+
+.message {
+    padding: 10px 0;
+}
+
+/* Entry Styles */
+article {
+    background-color: #f5f1ed; /* Light beige/cream background for entries */
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+article:hover {
+    transform: translateY(-5px); /* Hover effect */
+}
+
+h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #5a3d28; /* Rich dark brown */
+    background-color: #f3e2d6; /* Light beige background */
+    padding: 12px;
+    border-radius: 8px;
+}
+
+h3 a {
+    font-size: 1.4em;
+    color: #4e3629;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+h3 a:hover {
+    color: #a67c52; /* Muted gold color */
+}
+
+h2.mark {
+    background-color: #f8d7da; /* Soft pink for "marked" section */
+    color: #721c24; /* Dark red-brown */
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Add New Entry Button */
+button {
+    background-color: #5a3d28; /* Dark brown button */
+    color: #f5f1ed; /* Light cream text */
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4e3629;
+}
+
+button:active {
+    transform: scale(0.98); /* Button click effect */
+}
+
+/* Form Styles */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    border-radius: 8px;
+    border: 1px solid #d6c6b1; /* Light brown border */
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #a67c52; /* Muted gold on focus */
+}
+
+/* Button for Form Submission */
+input[type="submit"] {
+    background-color: #5a3d28;
+    color: #f5f1ed;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #4e3629;
+}
+
+/* Footer */
+form {
+    margin-top: 40px;
+    text-align: center;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    font-size: 1.3em;
+}
+
+/* Divider Style */
+.section-divider {
+    border: none;
+    border-top: 1px solid #a67c52; /* Muted gold line */
+    width: 50%;
+    margin: 20px auto;
+}
+
+/* Smooth Transition for Layout Changes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.entry {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 2.3em;
+    }
+
+    .entry {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h3 a {
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 1.1em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 a {
+        font-size: 1.1em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 8px 14px;
+    }
+}
+
+
+

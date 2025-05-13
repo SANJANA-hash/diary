@@ -1,0 +1,59 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary</title>
+
+    <!-- Link to Static CSS -->
+    <link rel="stylesheet" href="{% static 'css/diary.css' %}">
+    <!-- Add Font Awesome Icons for buttons and messages -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Add a profile image if needed -->
+        <img src="{% static 'images/profile-pic.jpg' %}" alt="Profile" class="profile-img">
+        <h1><a href="/">Dear Diary…</a></h1>
+    </header>
+
+    <!-- Display Messages -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="message">
+                <i class="fas fa-info-circle"></i> {{ message }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <!-- Content Block -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Divider Line -->
+    <hr class="section-divider">
+
+    <!-- Add New Entry Button -->
+    <a href="{% url 'entry-create' %}">
+        <button class="add-entry-button">
+            <i class="fas fa-plus-circle"></i> Add New Entry
+        </button>
+    </a>
+
+    <!-- Logout Form -->
+    <form method="post" action="{% url 'admin:logout' %}" class="logout-form">
+        {% csrf_token %}
+        <input type="submit" value="Logout" class="logout-button"/>
+        <i class="fas fa-sign-out-alt"></i>
+    </form>
+
+</body>
+
+</html>
